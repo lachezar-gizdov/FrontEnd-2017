@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tables</title>
+    <style>
+        table{
+            width: 200px;
+            border: inset #C8C8C8;
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+        td{
+            border: inset #C8C8C8;
+        }
+        #bottom{
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <table cellpadding="5px">
+            <tr>
+                <td colspan="3">Title goes here</td>
+                <td align="center">A</td>
+                <td align="right">B</td>
+            </tr>
+            <tr>
+                <td rowspan="3">C</td>
+                <td align="center">D</td>
+                <td align="center">E</td>
+                <td align="center">F</td>
+                <td align="right">G</td>
+            </tr>
+            <tr>
+                <td align="center">H</td>
+                <td colspan="2" align="center">I</td>
+                <td id="bottom" rowspan="2" align="right">J</td>
+            </tr>
+            <tr align="center">
+                <td>K</td>
+                <td>L</td>
+                <td>M</td>
+            </tr>
+            <tr>
+                <td align="right">N</td>
+                <td colspan="4" align="center">O</td>
+            </tr>
+        </table>
+    </main>
+</body>
+
+</html>

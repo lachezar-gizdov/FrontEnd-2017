@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <style>
+        table, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        td{
+            padding: 3px;
+        }
+        table{
+            width: 180px;
+        }
+        .input-width-one{
+            width: 370px;
+        }
+        .text-align-right{
+            text-align: right;
+        }
+        .address-input-size{
+            width: 370px;
+            height: 60px;
+        }
+        .input-width-two{
+            width: 270px;
+        }
+        .input-width-three{
+            width: 50px;
+        }
+        .input-width-four{
+            width: 120px;
+        }
+        .select-width{
+            width: 125px;
+        }
+        .phone-one{
+            width: 50px;
+        }
+        .phone-two{
+            width: 220px;
+        }
+        .input-date-width-one{
+            width: 20px;
+        }
+        .input-date-width-two{
+            width: 80px;
+        }
+        .comments-width{
+            width: 370px;
+            height: 100px;
+        }
+        .submit-font{
+            background-color: #D1EDE1;
+        }
+        .bold-text{
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <table>
+            <tr>
+                <td class="text-align-right bold-text" >Last Name</td>
+                <td colspan="3">
+                    <input type="text" class="input-width-one" placeholder="Nakov">
+                </td>
+            </tr>
+            <tr>
+                <td class="text-align-right bold-text" >First name</td>
+                <td colspan="3">
+                    <input type="text" class="input-width-one" placeholder="Svetlin">
+                </td>
+            </tr>
+            <tr>
+                <td class="text-align-right bold-text" >Address</td>
+                <td colspan="3">
+                    <input type="text" class="address-input-size" placeholder="17 Hristo Botev Str. floor 3, apt. 12">
+                </td>
+            </tr>
+            <tr>
+                <td class="text-align-right bold-text" >City</td>
+                <td>
+                    <input type="text" class="input-width-two" placeholder="Kaspichan">
+                </td>
+                <td>State</td>
+                <td>
+                    <input type="text" class="input-width-three">
+                </td>
+            </tr>
+            <tr>
+                <td class="text-align-right bold-text" >Zip/Postal Code</td>
+                <td colspan="3">
+                    <input type="text" class="input-width-four" placeholder="9325">
+                </td>
+            </tr>
+            <tr>
+                <td class="text-align-right bold-text" >Country</td>
+                <td colspan="3">
+                    <select name="country" class="select-width">
+                        <option value="Bulgaria" selected >Bulgaria</option>
+                        <option value="France">France</option>
+                        <option value="Germany">Germany</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-align-right bold-text" >Phone (country code, area code, number</td>
+                <td colspan="3">
+                    (+ <input type="text" class="phone-one" placeholder="359">) 
+                    <input type="text" class="phone-one" placeholder="88"> - 
+                    <input type="text" class="phone-two" placeholder="8334343">
+                </td>
+            </tr>
+            <tr>
+                <td class="text-align-right bold-text" >E-mail</td>
+                <td colspan="3">
+                    <input type="email" class="input-width-one" placeholder="nakov@kaspichan.org">
+                </td>
+            </tr>
+            <tr>
+                <td class="text-align-right bold-text" >Birth date</td>
+                <td colspan="3">
+                    Month <input type="text" class="input-date-width-one" placeholder="06"> 
+                    Day <input type="text" class="input-date-width-one" placeholder="14"> 
+                    Year (4 digit) <input type="text" class="input-date-width-two" placeholder="1980">
+                </td>
+            </tr>
+            <tr>
+                <td class="text-align-right bold-text" >Gender</td>
+                <td colspan="3">
+                    <select name="gender">
+                        <option value="Male" selected >Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-align-right bold-text" >Starting date</td>
+                <td colspan="3">
+                    <input type="radio" value="spring" id="spring" name="date">
+                    <label for="spring">Spring 2006</label>
+                    <input type="radio" value="summer" id="summer" name="date">
+                    <label for="summer">Summer 2006</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="bold-text">Comments/Questions</td>
+                <td colspan="3">
+                    <input type="text" class="comments-width" placeholder="Please send me more information about the lodging.">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" align="center" class="submit-font" >
+                    <input type="submit" name="Submit">
+                    <input type="reset" value="Clear This Form">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
