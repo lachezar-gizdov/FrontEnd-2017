@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-size: 16px;
+}
+
+table{
+    width: 520px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+tr, td, th{
+    border: 1px solid #D4D0C8;
+    padding: 3px;
+}
+
+td{
+    font-size: 0.8rem;
+}
+
+th{
+    font-size: 0.9rem;
+    font-weight: lighter;
+    text-align: left;
+}
+
+thead tr{
+    background-color: #56B906;
+    color: #fff;
+}
+
+tr:nth-child(even)
+{
+    background-color: #ECECD8;
+}
+
+td:last-child{
+    width: 80px;
+}
+
+img{
+    vertical-align: middle;
+}

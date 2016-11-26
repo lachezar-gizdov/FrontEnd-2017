@@ -1,0 +1,55 @@
+body{
+    background-color: #A9A9A9;
+    margin: 0 auto;
+    font-size: 14px;
+
+}
+nav{
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+li{
+    list-style-type: none;
+}
+
+li a:link{
+    color: #fff;
+}
+
+li a:visited{
+    color: #fff;
+}
+
+li a:hover{
+    background-color: #D3D3D3;
+}
+
+a:visited{
+    text-decoration: none;
+    color: #000;
+}
+
+a:link{
+    text-decoration: none;
+    color: #000;
+}
+
+h1{
+    font-size: 2.8rem;
+    text-align: center;
+    color: #FAFAD2;
+}
+
+h2{
+    font-size: 1.7rem;
+    color: #FAFAD2;
+}
+
+#foot{
+    text-align: center;
+}
+
+article footer{
+    font-size: 0.8rem;
+}
