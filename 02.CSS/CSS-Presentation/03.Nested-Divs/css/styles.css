@@ -1,0 +1,7 @@
+div.central { 
+    background-color:black; width:100%; border:1px solid red; border-radius:1000px; 
+    } 
+
+div {
+    background-color:black; border:1px solid red; border-radius:1000px; width:96%; 
+    }
