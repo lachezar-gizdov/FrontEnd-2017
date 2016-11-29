@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+table{
+    background-color: #B0CEEE;
+    width: 480px;
+    height: 480px;
+    border-radius: 7px;
+    padding: 5px;
+}
+
+tr, td, th{
+    border: 1px solid #B7C3D1;
+}
+
+th{
+    font-weight: normal;
+}
+
+#program-buttons img{
+    height: 18px;
+}
+
+#heading img{
+    height: 20px;
+}
+
+#heading{
+    display: inline-block;
+    position: relative;
+    margin-left: -400px;
+    margin-top: -5px;
+}
+
+#program-buttons{
+    display: inline-block;
+    margin-left: 313px;
+    margin-top: -8px;
+    position: absolute;
+    border: none;
+}
+
+#menu{
+    text-align: left;
+    height: 25px;
+}
+
+#display{
+    background: linear-gradient(to bottom, #e5eefb 0%,#f0f4fc 50%,#fefdff 100%);
+    text-align: right;
+    padding-right: 5px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    height: 65px;
+}
+
+#menu p{
+    display: inline-block;
+    height: 20px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+#menu{
+    background-color: #D5DCEE;
+}
+
+#menu p:first-of-type{
+    padding-left: 5px;
+}
+
+#menu p:first-letter{
+    text-decoration: underline;
+}
+
+tbody{
+    background-color: #D9E4F1;
+}
+
+.buttons{
+    border: none;
+    width: 370px;
+}
+
+.button-one{
+    width: 38px;
+    height: 38px;
+    background-color: #EDF3F8;
+    background: linear-gradient(to bottom, #eef4fa 0%,#d4dfee 100%);
+    border-radius: 4px;
+    border: 1px solid #B7C3D1;
+    font-size: 16px;
+    color: #3A5176;
+    margin: 2px;
+    }
+
+.button-one:hover{
+    background: linear-gradient(to bottom, #f7eebe 0%,#fbe772 48%,#f7eebe 100%);
+}
+
+.button-zero{
+    height: 38px;
+    width: 88px;
+    background: linear-gradient(to bottom, #eef4fa 0%,#d4dfee 100%);
+    border-radius: 4px;
+    border: 1px solid #B7C3D1;
+    font-size: 16px;
+}
+
+.button-zero:hover{
+    background: linear-gradient(to bottom, #f7eebe 0%,#fbe772 48%,#f7eebe 100%);
+}
+
+.button-result{
+    width: 38px;
+    height: 80px;
+    background: linear-gradient(to bottom, #eef4fa 0%,#d4dfee 100%);
+    border-radius: 4px;
+    border: 1px solid #B7C3D1;
+    font-size: 16px;
+    margin-top: 2px;
+    margin-left: 2px;
+    position: absolute;
+}
+
+.button-result:hover{
+    background: linear-gradient(to bottom, #f7eebe 0%,#fbe772 48%,#f7eebe 100%);
+}
+
+#disabled:hover{
+    background-color: grey;
+}
+
+.button-one.disabled{
+    background-color: #D9E4F1;
+    background: none;
+}
+
+#binary{
+    color: #3A5176;
+    font-size: 1.1rem;
+    height: 15px;
+}
+
+.radio{
+    color: #3A5176;
+}
+
+.radio input[type=radio]{
+    margin-bottom: 13px;
+    margin-left: 5px;
+}
+
+.radio input[type=radio]:last-of-type{
+    margin-bottom: 0;
+}

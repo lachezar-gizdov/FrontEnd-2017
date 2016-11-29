@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Windows Calculator</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">
+                        <div id="heading">
+                            <img src="images/icon.png" alt="icon"> Calculator
+                        </div>
+                        <div id="program-buttons">
+                            <img src="images/buttons.png" alt="program buttons">
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="menu" colspan="2">
+                        <p> View </p>
+                        <p> Edit </p>
+                        <p> Help </p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="display" colspan="2">
+                        8854455
+                    </td>
+                </tr>
+                <tr>
+                    <td id="binary" colspan="2">
+                        <pre>
+  0000    0000    0000    0000    0000    0000    0000    0000
+  63                              47                        32 
+  0000    0000    1000    0111    0001    1011    1011    0111
+  31                                15                       0
+                        </pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="radio">
+                        <input type="radio" name="first-group" id="hex">
+                        <label for="hex">Hex</label><br>
+                        <input type="radio" name="first-group" checked id="dec">
+                        <label for="dec">Dec</label><br>
+                        <input type="radio" name="first-group" id="oct">
+                        <label for="oct">Oct</label><br>
+                        <input type="radio" name="first-group" id="bin">
+                        <label for="bin">Bin</label>
+                    </td>
+                    <td rowspan="2" class="buttons">
+                        <input type="button" class="button-one disabled" id="disabled" value=" " disabled="disabled">
+                        <input type="button" class="button-one" value="Mod">
+                        <input type="button" class="button-one disabled" value="A" disabled>
+                        <input type="button" class="button-one disabled" value="MC" disabled>
+                        <input type="button" class="button-one disabled" value="MR" disabled>
+                        <input type="button" class="button-one disabled" value="MS" disabled>
+                        <input type="button" class="button-one disabled" value="M+" disabled>
+                        <input type="button" class="button-one disabled" value="M-" disabled>
+
+                        <input type="button" class="button-one" value="{">
+                        <input type="button" class="button-one" value="}">
+                        <input type="button" class="button-one disabled" value="B" disabled>
+                        <input type="button" class="button-one" value="<-">
+                        <input type="button" class="button-one" value="CE">
+                        <input type="button" class="button-one" value="C">
+                        <input type="button" class="button-one" value="+-">
+                        <input type="button" class="button-one disabled" value="V" disabled>
+
+                        <input type="button" class="button-one" value="RoL">
+                        <input type="button" class="button-one" value="RoR">
+                        <input type="button" class="button-one disabled" value="C" disabled>
+                        <input type="button" class="button-one" value="7">
+                        <input type="button" class="button-one" value="8">
+                        <input type="button" class="button-one" value="9">
+                        <input type="button" class="button-one" value="/">
+                        <input type="button" class="button-one disabled" value="%" disabled>
+
+                        <input type="button" class="button-one" value="Or">
+                        <input type="button" class="button-one" value="Xor">
+                        <input type="button" class="button-one disabled" value="D" disabled>
+                        <input type="button" class="button-one" value="4">
+                        <input type="button" class="button-one" value="5">
+                        <input type="button" class="button-one" value="6">
+                        <input type="button" class="button-one" value="*">
+                        <input type="button" class="button-one disabled" value="1/x" disabled>
+
+                        <input type="button" class="button-one" value="Lsh">
+                        <input type="button" class="button-one" value="Rsh">
+                        <input type="button" class="button-one disabled" value="E" disabled>
+                        <input type="button" class="button-one" value="1">
+                        <input type="button" class="button-one" value="2">
+                        <input type="button" class="button-one" value="3">
+                        <input type="button" class="button-one" value="-">
+                        <input type="button" class="button-result" value="=">
+
+                        <input type="button" class="button-one" value=" ">
+                        <input type="button" class="button-one" value="Not">
+                        <input type="button" class="button-one" value="And">
+                        <input type="button" class="button-one disabled" value="F" disabled>
+                        <input type="button" class="button-zero" value="0">
+                        <input type="button" class="button-one disabled" value="." disabled>
+                        <input type="button" class="button-one" value="+">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="radio">
+                        <input type="radio" name="second-group" checked id="qword">
+                        <label for="qword">Qword</label><br>
+                        <input type="radio" name="second-group" id="dword">
+                        <label for="dword">Dword</label><br>
+                        <input type="radio" name="second-group" id="word">
+                        <label for="word">Word</label><br>
+                        <input type="radio" name="second-group" id="byte">
+                        <label for="byte">Byte</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>
