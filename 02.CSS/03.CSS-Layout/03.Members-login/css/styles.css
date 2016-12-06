@@ -1,0 +1,85 @@
+body{
+    background: #000;
+}
+
+section{
+    background: #3B3B3B;
+    width: 650px;
+    color: #A1A1A1;
+    border-radius: 6px;
+    border: 1px solid #806850;
+}
+
+header{
+    background: grey;
+    background: linear-gradient(to bottom, #393939 0%,#2e2e2e 50%,#2e2e2e 100%);
+    border-radius: 6px 6px 0 0;
+}
+
+img, h1{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+img{
+    margin-left: 15px;
+}
+
+h1{
+    color: #fff;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+h2{
+    margin-top: 15px;
+    color: #FDD71C;
+    font-weight: normal;
+    font-size: 1.9rem;
+}
+
+article{
+    padding: 8px;
+}
+
+a{
+    color: #E0E0E0;
+    text-decoration: none;
+}
+
+a:active{
+    color: #E0E0E0;
+}
+
+a:visited{
+    color: #E0E0E0;
+}
+
+p{
+    margin: 0;
+}
+
+input[type="text"]{
+    padding-left: 15px;
+    width: 140px;
+}
+
+input[type="email"]{
+    padding-left: 15px;
+    width: 140px;
+}
+
+input[type="image"]{
+    margin-left: 10px;
+    margin-top: 15px;
+    position: absolute;
+}
+
+#go{
+    position: absolute;
+    color: #fff;
+    margin-top: 22px;
+    margin-left: 27px;
+    z-index: 1;
+    cursor: pointer;
+}

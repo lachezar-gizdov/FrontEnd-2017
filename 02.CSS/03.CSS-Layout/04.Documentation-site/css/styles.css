@@ -1,0 +1,129 @@
+body {
+	font-family: Calibri, "Trebuchet MS", Tahoma, Arial, "Courier New", Serif;
+	background-color: #f1f1f1;
+	width: 960px;
+}
+
+body>nav, body>section {
+	float: left;
+}
+
+body>nav {
+	width: 165px;
+	line-height: 16px;
+}
+
+body>aside {
+	width: 180px;
+	float: right;
+}
+
+body>section {
+	width: 600px;
+	padding: 5px;
+	border: 1px solid #000;
+	background-color: #fff;
+}
+body>nav>div>a,#home, section>header>nav>a, section>footer>nav>a{
+	text-decoration: none;
+	color: inherit;
+}
+
+body>nav>div>a, #home{
+	display: block;
+}
+
+#home{
+	font-weight: bold;
+	padding-left: 22px;
+	padding-top: 4px;
+	height: 20px;
+	background-image: url(img/home.png);
+	background-repeat: no-repeat;
+	background-size: 18px;
+	margin-top: 20px;
+}
+
+nav h4{
+	margin: 20px 0 0 0;
+	color: #8F0A08;
+}
+
+header{
+	border-bottom: 1px solid #000;
+	padding-bottom: 10px;
+}
+
+section>header>nav>a, section>footer>nav>a{
+	width: 120px;
+	border: 1px solid #000;
+	display: inline-block;
+	text-align: center;
+}
+
+h2{
+	font-size: 1em;
+	font-weight: bold;
+	background-color: gray;
+	color: #fff;
+	padding: 0 5px;
+}
+
+body>section>footer{
+	margin: 10px 0 40px 0;
+	padding: 5px 0;
+	border-bottom: 1px solid #000;
+	border-top: 1px solid #000;
+}
+
+#css-logo{
+	width: 125px;
+	padding-top: 5px;
+	padding-right: 20px;
+}
+
+aside>div{
+	border: 1px solid #000;
+	text-align: center;
+	margin: 2px;
+	padding: 0 0 5px 0;
+	background-color: #fff;
+}
+
+aside>div>h2{
+	margin: 0;
+}
+
+input[type="text"]{
+	margin: 5px 10px;
+	width: 100px;
+}
+
+#boldSection>p, #boldSection>h2{
+	font-weight: 900;
+}
+
+#image{
+	float: left;
+	height: 100%;
+}
+
+button{
+	margin: 3px;
+	width: 130px;
+	height: 40px;
+	font-weight: 900;
+	color: #26c7ff;
+	background-image: url(img/button.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+#home-image{
+	position: absolute;
+	margin-top: 25px;
+}
+
+.red-links{
+	color: #8F0A08;
+}
