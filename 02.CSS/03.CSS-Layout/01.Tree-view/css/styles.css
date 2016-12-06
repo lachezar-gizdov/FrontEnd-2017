@@ -1,0 +1,18 @@
+li{
+    list-style: none;
+    cursor: pointer;
+}
+
+ul li ul li{
+    color: grey;
+}
+
+ul li ul{
+    display: none;
+    position: relative;
+}
+
+ul li:hover ul{
+    display: block;
+    margin-left: -28px;
+}

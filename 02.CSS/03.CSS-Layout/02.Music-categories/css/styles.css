@@ -1,0 +1,61 @@
+main{
+    background: #EEEEEE;
+    width: 440px;
+    height: 520px;
+    border-radius: 12px;
+}
+
+article{
+    background: #fff;
+    width: 400px;
+    height: 110px;
+    margin-left: 12px;
+    margin-bottom: 35px;
+    border: 1px solid #BEBEBE;
+}
+
+img{
+    float: left;
+    margin-top: 15px;
+    margin-left: 12px;
+    margin-right: 15px;
+    border: 1px solid #BEBEBE;
+}
+
+h1{
+    font-size: 1.1rem;
+    font-weight: normal;
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-bottom: 40px;
+}
+
+p{
+    font-size: 0.8rem;
+    padding-top: 15px;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.btn-listen{
+    margin-top: 15px;
+    margin-left: 80px;
+}
+
+.text-listen{
+    position: absolute;
+    margin-left: 105px;
+    margin-top: 20px;
+    color: #EEE;
+    font-size: 0.9rem;
+}
+
+.text-add{
+    position: absolute;
+    margin-left: 25px;
+    margin-top: 20px;
+    color: #EEE;
+    font-size: 0.9rem;
+}
