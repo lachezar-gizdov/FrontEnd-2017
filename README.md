@@ -1,2 +1,4 @@
-# Homeworks and tasks for the FrontEnd Track at Telerik Academy 2016 Fall
+# Homeworks and tasks for the FrontEnd Track
 ## HTML, CSS, Javascript
+
+Telerik Academy 2016 Fall
