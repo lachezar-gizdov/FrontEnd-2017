@@ -1,6 +1,6 @@
 'use strict';
 
-function Solve(args){
+function solve(args){
     let sideA = +args[0],
         sideB = +args[1],
         sideH = +args[2],
@@ -9,6 +9,6 @@ function Solve(args){
     console.log(area.toFixed(7));
 }
 
-Solve(['5', '7', '12']);
-Solve(['2', '1', '33']);
-Solve(['0.222', '0.333', '0.555']);
+solve(['5', '7', '12']);
+solve(['2', '1', '33']);
+solve(['0.222', '0.333', '0.555']);

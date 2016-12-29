@@ -6,7 +6,7 @@ function solve(args){
         area = width * height,
         perimeter = 2 * (width + height);
 
-    console.log(area.toFixed(2), perimeter.toFixed(2));
+    console.log(`${area.toFixed(2)} ${perimeter.toFixed(2)}`);
 }
 
 solve(['2.5', '3']);

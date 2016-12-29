@@ -1,6 +1,6 @@
 'use strict';
 
-function Solve(args){
+function solve(args){
     let x = +args[0],
         y = +args[1],
         r = 2,
@@ -18,6 +18,6 @@ function Solve(args){
     }
 }
 
-Solve(['-2', '0']);
-Solve(['-1', '2']);
-Solve(['1.5', '-1']);
+solve(['-2', '0']);
+solve(['-1', '2']);
+solve(['1.5', '-1']);

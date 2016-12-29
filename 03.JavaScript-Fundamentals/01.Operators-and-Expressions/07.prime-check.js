@@ -1,6 +1,6 @@
 'use strict';
 
-function Solve(args){
+function solve(args){
     let number = +args[0],
         counter = 0;
 
@@ -18,6 +18,6 @@ function Solve(args){
     }
 }
 
-Solve(['2']);
-Solve(['23']);
-Solve(['-3']);
+solve(['2']);
+solve(['23']);
+solve(['-3']);
