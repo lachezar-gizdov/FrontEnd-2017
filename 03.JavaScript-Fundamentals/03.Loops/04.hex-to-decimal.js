@@ -34,7 +34,7 @@ function solve (args) {
 
     dec += temp * Math.pow(16, i);
   }
-  console.log(dec)
+  console.log(dec);
 
   function reverse (str) {
     let result = '';
