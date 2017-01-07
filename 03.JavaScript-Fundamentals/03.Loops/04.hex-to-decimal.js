@@ -1,6 +1,6 @@
 'use strict';
 
-function solve (args) {
+function solve(args) {
   let hex = args[0],
     dec = 0,
     temp = 0,
@@ -36,7 +36,7 @@ function solve (args) {
   }
   console.log(dec);
 
-  function reverse (str) {
+  function reverse(str) {
     let result = '';
     for (let i = str.length - 1; i >= 0; i--)
       result += str[i];
