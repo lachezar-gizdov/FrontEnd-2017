@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/05.larger-than-neighbours.js",
+            "program": "${workspaceRoot}/07.sorting-array.js",
             "cwd": "${workspaceRoot}"
         },
         {

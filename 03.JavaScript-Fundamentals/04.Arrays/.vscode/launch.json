@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/10.2.prime-numbers.js",
+            "program": "${workspaceRoot}/07.binary-search.js",
             "cwd": "${workspaceRoot}"
         },
         {

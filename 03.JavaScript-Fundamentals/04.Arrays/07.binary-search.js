@@ -2,24 +2,25 @@
 
 function solve(args) {
     let arr = [...args].map(Number),
-        x = arr.splice(arr.length - 1, 1),
+        x = arr[arr.length - 1],
         n = arr.splice(0, 1),
-        minIndex = 0,
-        maxIndex = arr.length - 1,
-        currentIndex,
-        currentElement;
+        startIndex = 0,
+        endIndex = arr.length - 1,
+        currentIndex;
 
-    while (minIndex <= maxIndex) {
-        currentIndex = (minIndex + maxIndex) / 2 | 0;
-        currentElement = arr[currentIndex];
+    while (startIndex <= endIndex) {
+        currentIndex = (startIndex + endIndex) / 2 | 0;
 
-        if (currentElement < x[0]) {
-            minIndex = currentIndex + 1;
+        if (arr[0] === x) {
+            return '0';
         }
-        else if (currentElement > x[0]) {
-            maxIndex = currentIndex - 1;
+        else if (arr[currentIndex] < x) {
+            startIndex = currentIndex + 1;
         }
-        else {
+        else if (arr[currentIndex] > x) {
+            endIndex = currentIndex - 1;
+        }
+        else if (arr[currentIndex] === x) {
             return currentIndex;
         }
     }
