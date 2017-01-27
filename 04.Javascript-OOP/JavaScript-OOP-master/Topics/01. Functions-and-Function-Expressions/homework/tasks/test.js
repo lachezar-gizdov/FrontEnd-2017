@@ -2,14 +2,14 @@
 
 function solve(numbers) {
     let result = [],
-        counter = 0;
-        numbers[0] = +numbers[0];
-        numbers[1] = +numbers[1];
+        counter = 0,
+    min = +numbers[0],
+    max = +numbers[1];
 
-    if (numbers.length !== 2 || isNaN(numbers[0]) || isNaN(numbers[1])) {
-        throw 'MyError';
+    if (numbers.length !== 2 || isNaN(min) || isNaN(max)) {
+        throw 'Error';
     }
-    for (let i = numbers[0]; i <= numbers[1]; i += 1) {
+    for (let i = min; i <= max; i += 1) {
         for (let j = 1; j <= i; j += 1) {
             if (i % j === 0) {
                 counter += 1;
@@ -20,9 +20,10 @@ function solve(numbers) {
         }
         counter = 0;
     }
-    console.log(result);
+    console.log("Primes:", result);
 }
 
 solve([1, 5]);
 solve(["1", "5"]);
 solve([258, 262]);
+solve(['pesho', 5]);
