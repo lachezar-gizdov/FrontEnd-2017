@@ -47,8 +47,13 @@
 function solve() {
   var Course = {
     init: function (title, presentations) {
+      
+      if(presentations === null){
+        throw "Error";
+      }
     },
     addStudent: function (name) {
+      
     },
     getAllStudents: function () {
     },
