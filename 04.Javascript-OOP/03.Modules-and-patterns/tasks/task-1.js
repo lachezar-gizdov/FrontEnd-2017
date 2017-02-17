@@ -46,27 +46,118 @@
 
 function solve() {
   var Course = {
-    init: function (title, presentations) {
-      
-      if(presentations === null){
-        throw "Error";
+    title: '',
+    presentations: [],
+    students: [],
+
+    init: function (ttl, ppts) {
+      let regex = /(\s{2,})|(^ )|( $)/g;
+
+      if (arguments.length < 1 || !ttl) {
+        throw 'Title cannot be empty';
       }
+
+      if (arguments.length < 2 || ppts.length < 1) {
+        throw 'Presentations cannot be empty';
+      }
+
+      if (regex.test(ttl)) {
+        throw 'Course title contains invalid characters';
+      }
+
+      for (let presentation of ppts) {
+        if (regex.test(presentation)) {
+          throw 'Presentation contains invalid characters';
+        }
+
+        if (!presentation) {
+          throw 'Presetantion title cannot be empty';
+        }
+      }
+
+      this.title = ttl;
+      this.presentations = ppts;
+
+      return this;
     },
     addStudent: function (name) {
-      
+      let names = name.split(' ');
+      let regex = /^[A-Z][a-z]*/;
+
+      if (names.length !== 2) {
+        throw 'Invalid number of names';
+      }
+
+      if (!names.every(n => regex.test(n))) {
+        throw 'Names containes invalid symbols';
+      }
+
+      let student = {
+        firstName: names[0],
+        lastName: names[1],
+        ID: this.students.length + 1,
+        homeworks: [],
+        examScore: 0,
+        finalScore: 0
+      };
+
+      this.students.push(student);
+      return student.ID;
+
     },
+
     getAllStudents: function () {
+
     },
+
     submitHomework: function (studentID, homeworkID) {
+
+      if (!this.students.some(st => st.ID === studentID)) {
+        throw 'Invalid Student ID';
+      }
+      if (!this.presentations[homeworkID - 1]) {
+        throw 'No presentation for this homework';
+      }
+      let student = this.students.find(st => st.ID === studentID)
+      student.homeworks.push(homeworkID);
+
     },
+    
     pushExamResults: function (results) {
+
+      if (results.some(result => isNaN(result.StudentID))) {
+        throw 'Student ID is not a number';
+      }
+      if (results.some(result => result.StudentID > this.students.length)) {
+        throw 'Student ID is larger than students number';
+      }
+      if (results.some(result => result.StudentID < 1)) {
+        throw 'Student ID is smaller than the first student number';
+      }
+      if (results.some(result => isNaN(result.score))) {
+        throw 'Score is not a number';
+      }
+
+      let checkForDuplicates = results.filter((results, index, self) =>
+        self.findIndex(result =>
+          result.StudentID === results.StudentID) !== index);
+      if (checkForDuplicates.length > 0) {
+        throw 'Repeating student';
+      }
+
+      for (let student of this.students) {
+        let sIndex = results.findIndex(s => s.StudentID === student.ID);
+        if (sIndex !== -1) {
+          student.examScore = results[sIndex].score;
+        }
+      }
     },
     getTopStudents: function () {
+
     }
   };
 
   return Course;
 }
-
 
 module.exports = solve;
