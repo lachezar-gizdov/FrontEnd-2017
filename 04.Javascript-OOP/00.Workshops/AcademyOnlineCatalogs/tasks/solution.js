@@ -43,7 +43,7 @@ function solve() {
 	}
 
 	class Item {
-		constructor(description, name) {
+		constructor(name, description) {
 			this.description = description;
 			this.name = name;
 			this.id = IDGenerator().getNextID();
@@ -65,8 +65,8 @@ function solve() {
 	}
 
 	class Book extends Item {
-		constructor(description, name, isbn, genre) {
-			super(description, name);
+		constructor(name, isbn, genre, description) {
+			super(name, description);
 			this.isbn = isbn;
 			this.genre = genre;
 		}
@@ -88,8 +88,8 @@ function solve() {
 	}
 
 	class Media extends Item {
-		constructor(description, name, duration, rating) {
-			super(description, name);
+		constructor(name, rating, duration, description) {
+			super(name, description);
 			this.duration = duration;
 			this.rating = rating;
 		}
