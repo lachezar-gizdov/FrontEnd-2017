@@ -14,11 +14,11 @@ function solve() {
 			throw Error('Invalid description!');
 		}
 	}
-	function validateStringLength(str, lowerLimit, upperLimit) {
+	function validateStringLength(str) {
 		if (typeof str !== 'string') {
 			throw Error('Name must be a string!');
 		}
-		if (str.length < lowerLimit || str.length > upperLimit) {
+		if (str.length < 2 || str.length > 40) {
 			throw Error('Name length must be between 2 and 40 symbols!');
 		}
 	}
@@ -52,7 +52,7 @@ function solve() {
 			return this._name;
 		}
 		set name(value) {
-			validateStringLength(value, 2, 40);
+			validateStringLength(value);
 			this._name = value;
 		}
 		get description() {
@@ -123,7 +123,7 @@ function solve() {
 		}
 
 		set name(value) {
-			validateStringLength(value, 2, 40);
+			validateStringLength(value);
 			this._name = value;
 		}
 
@@ -233,10 +233,26 @@ function solve() {
 			if (typeof count !== 'number' || count < 1) {
 				throw Error('Invalid count!');
 			}
+
+			return this.items
+				.sort((x, y) => x.rating - y.rating)
+				.reverse()
+				.slice(0, count)
+				.map(item => {
+					return {
+						name: item.name,
+						id: item.id
+					};
+				});
 		}
 
 		getSortedByDuration() {
-
+			return this.items.sort((x, y) => {
+				if (x.duration === y.duration) {
+					return x.id - y.id;
+				}
+				return y.duration - x.duration;
+			});
 		}
 
 		find(options) {
