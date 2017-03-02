@@ -44,8 +44,8 @@ function solve() {
 
 	class Item {
 		constructor(name, description) {
-			this.description = description;
 			this.name = name;
+			this.description = description;
 			this.id = IDGenerator().getNextID();
 		}
 		get name() {
