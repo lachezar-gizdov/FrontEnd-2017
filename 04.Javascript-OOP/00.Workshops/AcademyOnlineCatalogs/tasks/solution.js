@@ -7,56 +7,6 @@ function solve() {
 		};
 	}());
 
-	function validateDescription(des) {
-		if (typeof des !== 'string') {
-			throw Error('Description have to be string!');
-		}
-		if (des === '') {
-			throw 'Description should not be empty!';
-		}
-	}
-	function validateName(str) {
-		if (typeof str !== 'string') {
-			throw Error('Name must be a string!');
-		}
-		if (str.length < 2 || str.length > 40) {
-			throw Error('Name length must be between 2 and 40 symbols!');
-		}
-	}
-	function validateGenre(str) {
-		if (typeof str !== 'string') {
-			throw Error('Name must be a string!');
-		}
-		if (str.length < 2 || str.length > 20) {
-			throw Error('Genre length must be between 2 and 20 symbols!');
-		}
-	}
-	function validateISBN(isbn) {
-		if (typeof isbn !== 'string') {
-			throw Error('ISBN must be string!');
-		}
-		if (isbn.length !== 10 && isbn.length !== 13) {
-			throw Error('ISBN must be 10 or 13 digits!');
-		}
-		if (!(isbn.match(/^[0-9]+$/))) {
-			throw Error('ISBN must contain only digits!');
-		}
-	}
-
-	function validateDuration(dur) {
-		if (typeof dur !== 'number' || dur <= 0) {
-			throw Error('Invalid duration!');
-		}
-	}
-	function validateRating(rat) {
-		if (typeof rat !== 'number') {
-			throw Error('Invalid rating!');
-		}
-		if (rat < 1 || rat > 5) {
-			throw Error('Invalid rating!');
-		}
-	}
-
 	class Item {
 		constructor(description, name) {
 			this.id = GetNextID();
@@ -67,16 +17,26 @@ function solve() {
 		get description() {
 			return this._description;
 		}
-		set description(value) {
-			validateDescription(value);
-			this._description = value;
+		set description(description) {
+			if (typeof description !== 'string') {
+				throw Error('Description have to be string!');
+			}
+			if (description === '') {
+				throw 'Description should not be empty!';
+			}
+			this._description = description;
 		}
 		get name() {
 			return this._name;
 		}
-		set name(value) {
-			validateName(value);
-			this._name = value;
+		set name(name) {
+			if (typeof name !== 'string') {
+				throw Error('Name must be a string!');
+			}
+			if (name.length < 2 || name.length > 40) {
+				throw Error('Name length must be between 2 and 40 symbols!');
+			}
+			this._name = name;
 		}
 	}
 
@@ -90,22 +50,35 @@ function solve() {
 		get isbn() {
 			return this._isbn;
 		}
-		set isbn(value) {
-			validateISBN(value);
-			this._isbn = value;
+		set isbn(isbn) {
+			if (typeof isbn !== 'string') {
+				throw Error('ISBN must be string!');
+			}
+			if (isbn.length !== 10 && isbn.length !== 13) {
+				throw Error('ISBN must be 10 or 13 digits!');
+			}
+			if (!(isbn.match(/^[0-9]*$/))) {
+				throw Error('ISBN must contain only digits!');
+			}
+			this._isbn = isbn;
 		}
 		get genre() {
 			return this._genre;
 		}
-		set genre(value) {
-			validateGenre(value);
-			this._genre = value;
+		set genre(genre) {
+			if (typeof genre !== 'string') {
+				throw Error('Genre must be a string!');
+			}
+			if (genre.length < 2 || genre.length > 20) {
+				throw Error('Genre length must be between 2 and 20 symbols!');
+			}
+			this._genre = genre;
 		}
 	}
 
 	class Media extends Item {
-		constructor(name, rating, duration, description) {
-			super(name, description);
+		constructor(description, name, duration, rating) {
+			super(description, name);
 			this.duration = duration;
 			this.rating = rating;
 		}
@@ -113,44 +86,61 @@ function solve() {
 		get duration() {
 			return this._duration;
 		}
-		set duration(value) {
-			validateDuration(value);
-			this._duration = value;
+		set duration(duration) {
+			if (typeof duration !== 'number' || duration <= 0) {
+				throw Error('Invalid duration!');
+			}
+
+			this._duration = duration;
 		}
 
 		get rating() {
 			return this._rating;
 		}
-		set rating(value) {
-			validateRating(rating);
-			this._rating = value;
+		set rating(rating) {
+			if (typeof rating !== 'number') {
+				throw Error('Invalid rating!');
+			}
+			if (rating < 1 || rating > 5) {
+				throw Error('Invalid rating!');
+			}
+
+			this._rating = rating;
 		}
 	}
 
 	class Catalog {
-		constructor(name, items) {
+		constructor(name) {
+			this.id = GetNextID();
 			this.name = name;
 			this.items = [];
-			this.id = GetNextID();
 		}
 
 		get name() {
 			return this._name;
 		}
 
-		set name(value) {
-			validateName(value);
-			this._name = value;
+		set name(name) {
+			if (typeof name !== 'string') {
+				throw Error('Name must be a string!');
+			}
+			if (name.length < 2 || name.length > 40) {
+				throw Error('Name length must be between 2 and 40 symbols!');
+			}
+			this._name = name;
 		}
 
 		add(...items) {
 			if (Array.isArray(items[0])) {
 				items = items[0];
 			}
+
 			if (items.length === 0) {
 				Error('No items!');
 			}
+
 			this.items.push(...items);
+
 			return this;
 		}
 
@@ -193,7 +183,7 @@ function solve() {
 				books = books[0];
 			}
 			if (books.length === 0) {
-				Error('No books!');
+				throw Error('No books!');
 			}
 
 			books.forEach(function (book) {
@@ -234,7 +224,7 @@ function solve() {
 				medias = medias[0];
 			}
 			if (medias.length === 0) {
-				Error('No media!');
+				throw Error('No media!');
 			}
 
 			medias.forEach(function (media) {
@@ -288,19 +278,15 @@ function solve() {
 
 	return {
 		getBook: function (name, isbn, genre, description) {
-			// return a book instance
 			return new Book(name, isbn, genre, description);
 		},
 		getMedia: function (name, rating, duration, description) {
-			// return a media instance
 			return new Media(name, rating, description);
 		},
 		getBookCatalog: function (name) {
-			// return a book catalog instance
 			return new BookCatalog(name);
 		},
 		getMediaCatalog: function (name) {
-			// return a media catalog instance
 			return new MediaCatalog(name);
 		}
 	};
