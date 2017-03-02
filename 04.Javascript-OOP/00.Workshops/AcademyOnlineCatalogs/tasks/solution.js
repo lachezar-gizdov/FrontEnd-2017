@@ -1,20 +1,21 @@
 function solve() {
-	function IDGenerator() {
+	let GetNextID = (function () {
 		let id = 0;
-		function getNextID() {
+		return function () {
 			id += 1;
 			return id;
-		}
-		return {
-			getNextID: getNextID
 		};
-	}
-	function validateDescription(value) {
-		if (typeof value !== 'string') {
-			throw Error('Invalid description!');
+	}());
+
+	function validateDescription(des) {
+		if (typeof des !== 'string') {
+			throw Error('Description have to be string!');
+		}
+		if (des === '') {
+			throw 'Description should not be empty!';
 		}
 	}
-	function validateStringLength(str) {
+	function validateName(str) {
 		if (typeof str !== 'string') {
 			throw Error('Name must be a string!');
 		}
@@ -22,39 +23,47 @@ function solve() {
 			throw Error('Name length must be between 2 and 40 symbols!');
 		}
 	}
-	function validateISBN(value) {
-		if (value.length !== 10 && value.length !== 13) {
+	function validateGenre(str) {
+		if (typeof str !== 'string') {
+			throw Error('Name must be a string!');
+		}
+		if (str.length < 2 || str.length > 20) {
+			throw Error('Genre length must be between 2 and 20 symbols!');
+		}
+	}
+	function validateISBN(isbn) {
+		if (typeof isbn !== 'string') {
+			throw Error('ISBN must be string!');
+		}
+		if (isbn.length !== 10 && isbn.length !== 13) {
 			throw Error('ISBN must be 10 or 13 digits!');
 		}
-		if (!(value.match(/^[0-9]+$/))) {
+		if (!(isbn.match(/^[0-9]+$/))) {
 			throw Error('ISBN must contain only digits!');
 		}
 	}
 
-	function validateDuration(value) {
-		if (typeof value !== 'number' || value <= 0) {
+	function validateDuration(dur) {
+		if (typeof dur !== 'number' || dur <= 0) {
 			throw Error('Invalid duration!');
 		}
 	}
-	function validateRating(value) {
-		if (typeof value !== 'number' || value < 1 || value > 5) {
+	function validateRating(rat) {
+		if (typeof rat !== 'number') {
+			throw Error('Invalid rating!');
+		}
+		if (rat < 1 || rat > 5) {
 			throw Error('Invalid rating!');
 		}
 	}
 
 	class Item {
-		constructor(name, description) {
-			this.name = name;
+		constructor(description, name) {
+			this.id = GetNextID();
 			this.description = description;
-			this.id = IDGenerator().getNextID();
+			this.name = name;
 		}
-		get name() {
-			return this._name;
-		}
-		set name(value) {
-			validateStringLength(value);
-			this._name = value;
-		}
+
 		get description() {
 			return this._description;
 		}
@@ -62,11 +71,18 @@ function solve() {
 			validateDescription(value);
 			this._description = value;
 		}
+		get name() {
+			return this._name;
+		}
+		set name(value) {
+			validateName(value);
+			this._name = value;
+		}
 	}
 
 	class Book extends Item {
-		constructor(name, isbn, genre, description) {
-			super(name, description);
+		constructor(description, name, isbn, genre) {
+			super(description, name);
 			this.isbn = isbn;
 			this.genre = genre;
 		}
@@ -82,7 +98,7 @@ function solve() {
 			return this._genre;
 		}
 		set genre(value) {
-			validateStringLength(value, 2, 20);
+			validateGenre(value);
 			this._genre = value;
 		}
 	}
@@ -95,10 +111,10 @@ function solve() {
 		}
 
 		get duration() {
-			validateDuration(duration);
 			return this._duration;
 		}
 		set duration(value) {
+			validateDuration(value);
 			this._duration = value;
 		}
 
@@ -115,7 +131,7 @@ function solve() {
 		constructor(name, items) {
 			this.name = name;
 			this.items = [];
-			this.id = IDGenerator().getNextID();
+			this.id = GetNextID();
 		}
 
 		get name() {
@@ -123,7 +139,7 @@ function solve() {
 		}
 
 		set name(value) {
-			validateStringLength(value);
+			validateName(value);
 			this._name = value;
 		}
 
