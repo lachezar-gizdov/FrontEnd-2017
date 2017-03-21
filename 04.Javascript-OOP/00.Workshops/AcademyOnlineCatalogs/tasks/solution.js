@@ -278,10 +278,10 @@ function solve() {
 
 	return {
 		getBook: function (name, isbn, genre, description) {
-			return new Book(name, isbn, genre, description);
+			return new Book(description, name, isbn, genre);
 		},
 		getMedia: function (name, rating, duration, description) {
-			return new Media(name, rating, description);
+			return new Media(description, name, duration, rating);
 		},
 		getBookCatalog: function (name) {
 			return new BookCatalog(name);
