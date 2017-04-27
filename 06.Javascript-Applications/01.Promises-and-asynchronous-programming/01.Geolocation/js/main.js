@@ -5,8 +5,9 @@ let promise = new Promise(function (resolve, reject) {
 });
 
 promise.then(function (position) {
-    var map = document.getElementById('map');
-    var src = `http://maps.googleapis.com/maps/api/staticmap?center=${position.coords.latitude}, 
-    ${position.coords.longitude}&zoom=18&size=500x500&sensor=true`;
+    let map = document.getElementById('map'),
+        posLatitude = position.coords.latitude,
+        posLongitude = position.coords.longitude,
+        src = `http://maps.googleapis.com/maps/api/staticmap?size=600x500&center=${posLatitude}, ${posLongitude}&zoom=15`;
     map.setAttribute('src', src);
 });
