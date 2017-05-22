@@ -9,4 +9,4 @@ const homeController = function () {
     return {
         all: all
     };
-};
+}();
