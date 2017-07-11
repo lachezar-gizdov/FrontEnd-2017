@@ -23,7 +23,6 @@ const loadCourse = (q) => {
     return parseCourse(url)
         .then((course) => {
             courses.push(course);
-            return loadCourse(q);
         });
 };
 
