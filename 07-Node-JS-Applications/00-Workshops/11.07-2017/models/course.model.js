@@ -5,22 +5,6 @@ class Course{
         this.endingDate = endingDate;
         this.lecturesPerWeek = lecturesPerWeek;
     }
-
-    get Name(){
-        return this.name;
-    }
-
-    get StartingDate(){
-        return this.startingDate;
-    }
-
-    get EndingDate(){
-        return this.endingDate;
-    }
-
-    get LecturesPerWeek(){
-        return this.lecturesPerWeek;
-    }
 }
 
 module.exports = { Course };

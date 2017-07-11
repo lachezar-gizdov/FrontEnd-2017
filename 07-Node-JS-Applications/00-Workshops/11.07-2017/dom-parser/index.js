@@ -1,1 +1,1 @@
-module.exports(require('./dom-parser'));
+module.exports = require('./dom-parser');

@@ -1,16 +1,41 @@
 require('./polyfills/');
 require('./models/extensions/course.extensions');
 
-const { Parse } = require('./parsers/course.parser');
+const { parseCourse } = require('./parsers/course.parser');
+const { getQueue } = require('./queue/');
+const courses = [];
+const ids = getQueue();
 
 process.argv.forEach((val, index) => {
-  console.log(`${index}: ${val}`);
+    ids.push(val)
 });
+ids.pop();
+ids.pop();
+ids.pop();
 
-const urlBuilder = {
-    buildGenreUrl(genre, page) {
-        const url = `https://telerikacademy.com/Courses/Courses/Details/` +
-            `${genre}`;
-        return url;
-    },
+const loadCourse = (q) => {
+    if (q.isEmpty()) {
+        return Promise.resolve();
+    }
+
+    const id = q.pop();
+    const url = 'https://telerikacademy.com/Courses/Courses/Details/' + id;
+    return parseCourse(url)
+        .then((course) => {
+            courses.push(course);
+            return loadCourse(q);
+        });
 };
+
+const loadCourses = (q) => {
+    const PARALEL_LOADS = 1024;
+
+    return Promise.all(
+        Array.from({ length: PARALEL_LOADS })
+            .map((_) => loadCourse(q)));
+};
+
+loadCourses(ids)
+    .then(() => {
+        console.log(courses);
+    });

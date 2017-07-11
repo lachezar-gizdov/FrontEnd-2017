@@ -6,7 +6,7 @@ Course.prototype.instanceMethod = () => {
 
 };
 
-Movie.fromHtml = (html) => {
+Course.fromHtml = (html) => {
     return initParser(html)
     .then(($) => {
         let name = $(DETAILS.NAME_SELECTOR).html();
