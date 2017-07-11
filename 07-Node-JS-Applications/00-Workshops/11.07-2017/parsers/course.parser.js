@@ -11,7 +11,6 @@ const parseCourse = (url) => {
         })
         .then((html) => {
             let course = Course.fromHtml(html);
-            console.log(course);
             return course = Course.fromHtml(html);
         })
 };
