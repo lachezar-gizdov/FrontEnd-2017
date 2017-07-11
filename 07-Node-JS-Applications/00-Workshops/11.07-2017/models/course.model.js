@@ -22,3 +22,5 @@ class Course{
         return this.lecturesPerWeek;
     }
 }
+
+module.exports = { Course };
