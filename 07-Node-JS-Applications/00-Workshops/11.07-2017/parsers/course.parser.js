@@ -4,6 +4,7 @@ const parseCourse = (url) => {
     return fetch(url)
         .then((response) => {
             if (!response.ok) {
+                console.log(response.status)
                 throw new Error('Invalid url');
             }
 

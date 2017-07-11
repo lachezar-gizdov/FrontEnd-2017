@@ -11,30 +11,36 @@ process.argv.forEach((val, index) => {
 });
 ids.pop();
 ids.pop();
-ids.pop();
 
-const loadCourse = (q) => {
-    if (q.isEmpty()) {
-        return Promise.resolve();
-    }
+if (ids.peek() == 'courses') {
+    ids.pop();
 
-    const id = q.pop();
-    const url = 'https://telerikacademy.com/Courses/Courses/Details/' + id;
-    return parseCourse(url)
-        .then((course) => {
-            courses.push(course);
+    const loadCourse = (q) => {
+        if (q.isEmpty()) {
+            return Promise.resolve();
+        }
+
+        const id = q.pop();
+        const url = 'https://telerikacademy.com/Courses/Courses/Details/' + id;
+        return parseCourse(url)
+            .then((course) => {
+                courses.push(course);
+            });
+    };
+
+    const loadCourses = (q) => {
+        const PARALEL_LOADS = 1024;
+
+        return Promise.all(
+            Array.from({ length: PARALEL_LOADS })
+                .map((_) => loadCourse(q)));
+    };
+
+    loadCourses(ids)
+        .then(() => {
+            console.log(courses);
         });
-};
-
-const loadCourses = (q) => {
-    const PARALEL_LOADS = 1024;
-
-    return Promise.all(
-        Array.from({ length: PARALEL_LOADS })
-            .map((_) => loadCourse(q)));
-};
-
-loadCourses(ids)
-    .then(() => {
-        console.log(courses);
-    });
+} else if (ids.peek() == 'forum') {
+    ids.pop();
+    
+}

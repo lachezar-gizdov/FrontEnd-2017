@@ -1,10 +1,7 @@
 const { Course } = require('../course.model');
 const { DETAILS } = require('../../selectors/course.selectors');
 const { JSDOM } = require('jsdom');
-
-Course.prototype.instanceMethod = () => {
-
-};
+//const { initDomParser } = require('../../dom-parser');
 
 Course.fromHtml = (html) => {
         const dom = new JSDOM(html);
