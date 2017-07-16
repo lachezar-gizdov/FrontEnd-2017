@@ -9,6 +9,7 @@ const ids = getQueue();
 process.argv.forEach((val, index) => {
     ids.push(val)
 });
+
 ids.pop();
 ids.pop();
 
