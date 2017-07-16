@@ -3,9 +3,10 @@ extends layout
 block content
     h1
      | Get courses by ids
-    | Enter ids separated by "," : 
-    input(type="text")
-    input(type="submit", id="submit")
+    | Enter ids separated by "," :
+    form(method='POST' action='../routes/courses.get.js')
+        input(type="text")
+        input(type="submit", id="submit")
     hr
     div
         | Results:
