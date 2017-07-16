@@ -10,4 +10,15 @@ html(lang='en')
       if ENV_DEVELOPMENT
         script(src='http://localhost:35729/livereload.js')
   body
+    ul
+      li
+        a(href="/")
+          | Home
+      li
+        a(href="courses")
+          | Courses
+      li
+        a(href="posts")
+          | Forum Posts
+    ul
     block content
